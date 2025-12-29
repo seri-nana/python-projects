@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Monte Carlo calulation of $\pi$}
+\author{Serena Shao and Hui Shao}
+\date{December 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Monte Carlo Simulation and the Estimation of $\pi$
+
+Monte Carlo simulation is a computational technique that uses randomness and repeated trials to estimate numerical values that may be difficult or impossible to calculate exactly. Instead of relying on formulas alone, Monte Carlo methods approximate solutions by simulating many random events and analyzing the outcomes statistically. These simulations are especially useful in science, engineering, economics, and mathematics, where uncertainty and complexity make analytical solutions impractical.
+\bigskip
+
+In this project, Monte Carlo simulation is used to estimate the value of $\pi$. The method is based on simple geometry. A unit square is considered with side lengths of 1, and a quarter circle of radius 1 is inscribed inside the square. The area of the square is 1, while the area of the quarter circle is $\pi/4$. By randomly generating points inside the square and counting how many fall inside the quarter circle, the ratio of points inside the circle to the total number of points approaches the ratio of the areas. Multiplying this ratio by 4 provides an estimate of $\pi$.
+\bigskip
+
+The Python function montecarlo(numpoints) implements this idea by generating random x- and y-coordinates between 0 and 1. For each point, the program checks whether the point lies inside the quarter circle using the equation 
+\bigskip
+
+If it does, it is counted as a point inside the circle. After repeating this process many times, the program computes an approximation of $\pi$ by multiplying the fraction of points inside the circle by 4. A fixed random seed is used so that the results are reproducible, meaning the simulation produces the same output each time it is run.
+\bigskip
+
+As the number of points increases, the accuracy of the Monte Carlo estimate improves. The script calculates estimates of $\pi$ for increasing values of random points, ranging from 10 to 1,000,000. These results demonstrate an important property of Monte Carlo simulations: although individual estimates may fluctuate, the overall trend converges toward the true value of $\pi$. The simulation also calculates the Monte Carlo error, which decreases as the number of points increases. This reflects the statistical principle that larger sample sizes reduce uncertainty.
+\bigskip
+
+Finally, the results are visualized using graphs. One plot compares the Monte Carlo estimates of $\pi$ to the actual value, showing convergence as the number of points grows. A second plot displays the Monte Carlo error on a logarithmic scale, illustrating how error decreases as more random samples are used. Together, these graphs highlight both the power and the limitation of Monte Carlo simulation: while it can produce accurate approximations using randomness, achieving high precision requires a very large number of trials.
+\bigskip
+
+In conclusion, Monte Carlo simulation is a powerful numerical method that uses probability and repetition to solve mathematical problems. This project demonstrates how randomness can be used in a structured way to approximate $\pi$ and illustrates key ideas such as convergence, statistical error, and the importance of sample size.
+
+\end{document}
