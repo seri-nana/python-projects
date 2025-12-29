@@ -6,6 +6,8 @@ import numpy as np
 
 def montecarlo(numpoints):
     pointsincircle = 0
+    seed_value = 42
+    random.seed(seed_value) #
     for element in range(numpoints):
         x = random.random()
         y = random.random()
